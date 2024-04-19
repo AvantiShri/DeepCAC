@@ -97,7 +97,7 @@ def test(model, dataDir, output_dir_npy, output_dir_png, pkl_file,
       # If the number of test images is not mod 4 == 0, just redo the last file severall times
       patientIndex = min(len(testDataRaw) - 1, i + j)
       patientID = testDataRaw[patientIndex][0]
-      print 'Processing patient', patientID
+      print('Processing patient', patientID)
       # Store data for score calculation
       imgsTrue[patientIndex, :, :, :] = testDataRaw[patientIndex][1]
       msksTrue[patientIndex, :, :, :] = testDataRaw[patientIndex][2]
