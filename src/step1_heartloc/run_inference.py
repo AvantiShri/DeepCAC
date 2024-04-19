@@ -20,6 +20,7 @@ import matplotlib.pyplot as plt
 
 from scipy.ndimage import measurements
 
+sys.path.insert(0,"/content/DeepCAC/src/step1_heartloc")
 import heartloc_model
 
 def save_png(patientID, output_dir_png, img, msk, pred):
