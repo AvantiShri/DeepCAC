@@ -2,7 +2,7 @@
 
 io:
   # parent data directory
-  path_to_data_folder: "/mnt/data7/DH_Marton"
+  path_to_data_folder: "/content/DeepCAC/data"
   
   # parent data directory subdir where raw data should be found
   raw_data_folder_name: "raw"
@@ -112,7 +112,7 @@ model:
       augm_axes: [[0, 2], [1, 2], [0, 1]]
       
       # whether multiprocessing should be used or not to generate augmented batches 
-      use_multiprocessing: true
+      use_multiprocessing: false
       
       # if multiprocessing is used to generate augmented batches, do so with the following param.s
       max_queue_size: 8
