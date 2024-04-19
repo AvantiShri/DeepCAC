@@ -22,7 +22,7 @@ import os
 import sys
 import numpy as np
 import multiprocessing
-import cPickle as pickle
+import pickle
 import SimpleITK as sitk
 
 from glob import glob
