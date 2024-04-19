@@ -123,9 +123,9 @@ def test(model, dataDir, output_dir_npy, output_dir_png, pkl_file,
 def run_inference(model_output_dir_path, model_input_dir_path, model_weights_dir_path,
                   crop_size, export_png, model_down_steps, extended, has_manual_seg, weights_file_name):
 
-  print("\nDeep Learning model inference using 4xGPUs:") 
+  print("\nDeep Learning model inference:") 
   
-  mgpu = 4
+  mgpu = 1
 
   output_dir_npy = os.path.join(model_output_dir_path, 'npy')
   output_dir_png = os.path.join(model_output_dir_path, 'png')
