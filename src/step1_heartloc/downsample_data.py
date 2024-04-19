@@ -65,10 +65,14 @@ def resample_sitk(data_sitk, new_spacing, method):
     - Output pixel type
   """
 
-  res_filter = sitk.ResampleImageFilter()
-  img_sitk = res_filter.Execute(data_sitk, [new_size, new_size, new_size], sitk.Transform(), method,
+  #res_filter = sitk.ResampleImageFilter()
+  #img_sitk = res_filter.Execute(data_sitk, [new_size, new_size, new_size], sitk.Transform(), method,
+                                #data_sitk.GetOrigin(), [new_spacing, new_spacing, new_spacing],
+                                #data_sitk.GetDirection(), 0, data_sitk.GetPixelIDValue())
+
+  img_sitk = sitk.Resample(data_sitk, [new_size, new_size, new_size], sitk.Transform(), method,
                                 data_sitk.GetOrigin(), [new_spacing, new_spacing, new_spacing],
-                                data_sitk.GetDirection(), 0, data_sitk.GetPixelIDValue())
+                                data_sitk.GetDirection(), 0, data_sitk.GetPixelIDValue())  
   
   return img_sitk, orig_size, orig_spacing
 
