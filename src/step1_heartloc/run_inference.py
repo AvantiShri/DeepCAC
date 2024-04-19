@@ -123,7 +123,13 @@ def test(model, dataDir, output_dir_npy, output_dir_png, pkl_file,
 def run_inference(model_output_dir_path, model_input_dir_path, model_weights_dir_path,
                   crop_size, export_png, model_down_steps, extended, has_manual_seg, weights_file_name):
 
-  print("\nDeep Learning model inference:") 
+  print("\nDeep Learning model inference:")
+  print("Input values are:")
+  print("outdir path", model_output_dir_path, "indir path", model_input_dir_path,
+        "model weights", model_weights_dir_path, "crop size",
+        crop_size, "export png", export_png, "down steps", model_down_steps,
+        "extend", extended, "has manual seg", has_manual_seg, "weights file name",
+        weights_file_name)
   
   mgpu = 1
 
@@ -146,6 +152,7 @@ def run_inference(model_output_dir_path, model_input_dir_path, model_weights_dir
                                      input_shape = input_shape,
                                      mgpu = mgpu,
                                      ext = extended)
-
-  test(model, model_input_dir_path, output_dir_npy, output_dir_png,
-       pkl_file, test_file, weights_file, mgpu, has_manual_seg, export_png)
+  print("rather than calling test, going to save the model")
+  model.save("model_without_weights_loaded.hdf5")
+  #test(model, model_input_dir_path, output_dir_npy, output_dir_png,
+  #     pkl_file, test_file, weights_file, mgpu, has_manual_seg, export_png)
