@@ -74,7 +74,8 @@ def resample_sitk(img_sitk, method, curated_spacing, curated_size = None):
                                 #curated_spacing, img_sitk.GetDirection(), 0, img_sitk.GetPixelIDValue())
 img_sitk = sitk.Resample(img_sitk, curated_size, sitk.Transform(), method, img_sitk.GetOrigin(), 
                          curated_spacing, img_sitk.GetDirection(), 0, img_sitk.GetPixelIDValue())
-  return img_sitk, curated_size
+
+return img_sitk, curated_size
 
 
 ## ----------------------------------------
