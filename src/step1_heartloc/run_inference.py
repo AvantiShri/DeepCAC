@@ -1,4 +1,3 @@
-"""
   ----------------------------------------
      HeartLoc - DeepCAC pipeline step1
   ----------------------------------------
@@ -138,7 +137,7 @@ def run_inference(model_output_dir_path, model_input_dir_path, model_weights_dir
 
   weights_file = os.path.join(model_weights_dir_path, weights_file_name)
 
-  print 'Loading saved model from "%s"'%(weights_file)
+  print('Loading saved model from "%s"'%(weights_file))
   
   input_shape = (crop_size, crop_size, crop_size, 1)
   model = heartloc_model.get_unet_3d(down_steps = model_down_steps,
