@@ -124,7 +124,8 @@ if not os.path.exists(cropped_dir_name): os.mkdir(cropped_dir_name)
 if not os.path.exists(model_input_dir_path): os.mkdir(model_input_dir_path)
 
 # assert the curated data folder exists and it is non empty
-assert os.path.exists(curated_dir_path)
+#assert os.path.exists(curated_dir_path)
+assert os.path.isfile(curated_dir_path)
 assert len(os.listdir(curated_dir_path))
 
 # assert the inference data folder exists and it is non empty
