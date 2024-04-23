@@ -26,7 +26,7 @@ from skimage.transform import resize
 from scipy.ndimage import rotate, measurements
 
 from tensorflow.python.keras import backend as K
-from tensorflow.python.keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam
 #from keras.optimizers import adam_v2
 from tensorflow.python.keras.utils import plot_model
 from tensorflow.python.keras.models import Model, load_model
