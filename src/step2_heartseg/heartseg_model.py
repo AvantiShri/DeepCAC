@@ -17,7 +17,8 @@ import tensorflow
 tensorflow.compat.v1.logging.set_verbosity(tensorflow.compat.v1.logging.ERROR)
 
 from tensorflow.python.keras.utils import *
-from tensorflow.python.keras.engine import Input
+#from tensorflow.python.keras.engine import Input
+from tensorflow.keras.layers import Input
 from tensorflow.python.keras import backend as K
 from tensorflow.python.keras.optimizers import Adam
 from tensorflow.python.keras.models import load_model, Model
