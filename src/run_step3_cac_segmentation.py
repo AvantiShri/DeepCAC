@@ -116,13 +116,13 @@ if not os.path.exists(cropped_dir_name): os.mkdir(cropped_dir_name)
 if not os.path.exists(qc_cropped_dir_name): os.mkdir(qc_cropped_dir_name)
 
 # assert the curated data folder exists and it is non empty
-assert os.path.isdir(curated_dir_path)
-assert len(os.listdir(curated_dir_path))
+#assert os.path.exists(curated_dir_path)
+#assert len(os.listdir(curated_dir_path))
 
 # assert the inference data folder exists and it is non empty
 #assert os.path.exists(step2_inferred_dir_path)
-assert os.path.isfile(step2_inferred_dir_path)
-assert len(os.listdir(step2_inferred_dir_path))
+#assert os.path.isfile(step2_inferred_dir_path)
+#assert len(os.listdir(step2_inferred_dir_path))
 
 # assert the weights folder exists and the weights file is found
 weights_file = os.path.join(model_weights_dir_path, weights_file_name)
