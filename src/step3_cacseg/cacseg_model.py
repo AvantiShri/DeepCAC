@@ -15,14 +15,14 @@ import os, math, pickle, sys
 from functools import partial
 from tensorflow.python.keras import utils
 from tensorflow.python.keras import backend as K
-from tensorflow.python.keras.engine import Input
-from tensorflow.python.keras.optimizers import Adam, SGD
-from tensorflow.python.keras.models import load_model, Model
-from tensorflow.python.keras.utils import *
-from tensorflow.python.keras.layers.merge import concatenate
-from tensorflow.python.keras.layers import Conv3D, MaxPooling3D, UpSampling3D, Activation, BatchNormalization
-from tensorflow.python.keras.layers import Dropout
-from tensorflow.python.keras.callbacks import ModelCheckpoint, CSVLogger, Callback, LearningRateScheduler
+from tensorflow.keras.engine import Input
+from tensorflow.keras.optimizers import Adam, SGD
+from tensorflow.keras.models import load_model, Model
+from tensorflow.keras.utils import *
+from tensorflow.keras.layers.merge import concatenate
+from tensorflow.keras.layers import Conv3D, MaxPooling3D, UpSampling3D, Activation, BatchNormalization
+from tensorflow.keras.layers import Dropout
+from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger, Callback, LearningRateScheduler
 
 
 def dice_coef(y_true, y_pred, smooth=1.):
