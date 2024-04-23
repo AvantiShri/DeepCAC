@@ -47,7 +47,7 @@ def getUnet3d(down_steps, input_shape, pool_size, conv_size, initial_learning_ra
   if down_steps == 3:
     if extended:
       return getUnet3d_3_MGPU_extended(input_shape, pool_size=pool_size, conv_size=conv_size,
-                                       initial_learning_rate=initial_learning_rate, mgpu=mgpu,
+                                       initial_learning_rate=initial_learning_rate, mgpu=1,
                                        drop_out=drop_out, optimizer=optimizer)
     else:
       return getUnet3d_3_MGPU(input_shape, pool_size=pool_size, conv_size=conv_size,
