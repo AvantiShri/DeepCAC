@@ -122,7 +122,7 @@ result_metrics_dir_path = os.path.join(heartseg_data_path, seg_metrics_folder_na
 if not os.path.exists(bbox_dir_path): os.mkdir(bbox_dir_path)
 if not os.path.exists(cropped_dir_name): os.mkdir(cropped_dir_name)
 if not os.path.exists(model_input_dir_path): os.mkdir(model_input_dir_path)
-
+'''
 # assert the curated data folder exists and it is non empty
 #assert os.path.exists(curated_dir_path)
 assert os.path.isfile(curated_dir_path)
@@ -140,7 +140,7 @@ assert os.path.exists(weights_file)
 if not os.path.exists(model_output_dir_path): os.mkdir(model_output_dir_path)
 if not os.path.exists(model_output_nrrd_dir_path): os.mkdir(model_output_nrrd_dir_path)
 if not os.path.exists(result_metrics_dir_path): os.mkdir(result_metrics_dir_path)
-
+'''
 ## ----------------------------------------
 
 # run the segmentation pipeline
