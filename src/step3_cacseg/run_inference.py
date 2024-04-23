@@ -28,10 +28,10 @@ from scipy.ndimage import rotate, measurements
 from tensorflow.python.keras import backend as K
 from tensorflow.keras.optimizers import Adam
 #from keras.optimizers import adam_v2
-from tensorflow.python.keras.utils import plot_model
-from tensorflow.python.keras.models import Model, load_model
-from tensorflow.python.keras.callbacks import ModelCheckpoint
-from tensorflow.python.keras.layers import Input, concatenate, Conv2D, MaxPooling2D, Conv2DTranspose
+from tensorflow.keras.utils import plot_model
+from tensorflow.keras.models import Model, load_model
+from tensorflow.keras.callbacks import ModelCheckpoint
+from tensorflow.keras.layers import Input, concatenate, Conv2D, MaxPooling2D, Conv2DTranspose
 
 import cacseg_model
 from load_test_data import load_test_data
