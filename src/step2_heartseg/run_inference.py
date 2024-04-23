@@ -13,9 +13,10 @@
 import os
 import tables
 import numpy as np
-import heartseg_model
 import matplotlib.pyplot as plt
 
+sys.path.insert(0,"/content/DeepCAC/src/step2_heartseg")
+import heartseg_model
 
 def save_png(patientID, output_dir_png, img, msk, pred):
   maskIndicesMsk = np.where(msk != 0)
