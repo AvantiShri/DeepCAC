@@ -20,7 +20,8 @@ from tensorflow.python.keras.utils import *
 #from tensorflow.python.keras.engine import Input
 from tensorflow.keras.layers import Input
 from tensorflow.python.keras import backend as K
-from tensorflow.python.keras.optimizers import Adam
+#from tensorflow.python.keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam
 from tensorflow.python.keras.models import load_model, Model
 from tensorflow.python.keras.layers.merge import concatenate
 from tensorflow.python.keras.layers import Conv3D, MaxPooling3D, UpSampling3D, Activation, BatchNormalization, Dropout
