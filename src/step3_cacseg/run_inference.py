@@ -15,7 +15,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
-
+ import sys
 import tensorflow
 from tensorflow import keras
 tensorflow.compat.v1.logging.set_verbosity(tensorflow.compat.v1.logging.ERROR)
@@ -32,7 +32,7 @@ from tensorflow.keras.utils import plot_model
 from tensorflow.keras.models import Model, load_model
 from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.layers import Input, concatenate, Conv2D, MaxPooling2D, Conv2DTranspose
-
+sys.path.insert(0,"/content/DeepCAC/src/step3_cacseg")
 import cacseg_model
 from load_test_data import load_test_data
 
