@@ -9,7 +9,7 @@
   ----------------------------------------
   
 """
-
+import sys
 import os
 import tables
 import numpy as np
