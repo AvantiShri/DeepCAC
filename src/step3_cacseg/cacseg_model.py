@@ -122,7 +122,7 @@ def getUnet3d_4_MGPU(input_shape, pool_size=(2, 2, 2), conv_size=(3, 3, 3),
 ## ----------------------------------------
 
 def getUnet3d_3_MGPU(input_shape, pool_size=(2, 2, 2), conv_size=(3, 3, 3),
-                     initial_learning_rate=0.00001, mgpu=0):
+                     initial_learning_rate=0.00001, mgpu=1):
   inputs = Input(input_shape, name='model_input')
   conv1 = Conv3D(32, conv_size, activation='relu', padding='same', name='conv_1_1')(inputs)
   conv1 = Conv3D(64, conv_size, activation='relu', padding='same', name='conv_1_2')(conv1)
