@@ -24,8 +24,8 @@ from tensorflow.python.keras import backend as K
 from tensorflow.keras.optimizers import Adam
 from tensorflow.python.keras.models import load_model, Model
 from tensorflow.python.keras.layers.merge import concatenate
-from tensorflow.python.keras.layers import Conv3D, MaxPooling3D, UpSampling3D, Activation, BatchNormalization, Dropout
-
+#from tensorflow.python.keras.layers import Conv3D, MaxPooling3D, UpSampling3D, Activation, BatchNormalization, Dropout
+from tensorflow.keras.layers import Conv3D, MaxPooling3D, UpSampling3D, Activation, BatchNormalization, Dropout
 
 def dice_coef(y_true, y_pred, smooth=1.):
   y_true_f = K.flatten(y_true)
