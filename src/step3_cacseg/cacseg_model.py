@@ -15,7 +15,7 @@ import os, math, pickle, sys
 from functools import partial
 from tensorflow.python.keras import utils
 from tensorflow.python.keras import backend as K
-from tensorflow.keras.engine import Input
+from tensorflow.python.keras.engine import Input
 from tensorflow.keras.optimizers import Adam, SGD
 from tensorflow.keras.models import load_model, Model
 from tensorflow.keras.utils import *
