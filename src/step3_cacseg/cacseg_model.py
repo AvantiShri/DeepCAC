@@ -20,7 +20,8 @@ from tensorflow.keras.layers import Input
 from tensorflow.keras.optimizers import Adam, SGD
 from tensorflow.keras.models import load_model, Model
 from tensorflow.keras.utils import *
-from tensorflow.keras.layers.merge import concatenate
+from tensorflow.keras.layers import merge
+from merge import concatenate
 from tensorflow.keras.layers import Conv3D, MaxPooling3D, UpSampling3D, Activation, BatchNormalization
 from tensorflow.keras.layers import Dropout
 from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger, Callback, LearningRateScheduler
