@@ -16,7 +16,7 @@ from glob import glob
 
 
 def load_test_data(inputFolder, mask=False):
-  #print 'Loading test data'
+  #print('Loading test data')
 
   patientList = []
   testDataClc = []
@@ -25,13 +25,13 @@ def load_test_data(inputFolder, mask=False):
   for patientFile in patientFiles:
     patientID = os.path.basename(patientFile).replace('_img.npy', '')
     patientList.append(patientID)
-  #print 'Found', len(patientFiles), 'files for clc and hlt patients'
+  #print('Found', len(patientFiles), 'files for clc and hlt patients')
 
   for patientID in patientList:
 
     imgFile = os.path.join(inputFolder, patientID + '_img.npy')
     if not os.path.exists(imgFile):
-      print 'WARNING - img not found for patient', patientID
+      print('WARNING - img not found for patient', patientID)
       continue
     try:
       img = np.load(imgFile)
@@ -43,7 +43,7 @@ def load_test_data(inputFolder, mask=False):
       mskFile = os.path.join(inputFolder, patientID + '_msk.npy')
 
       if not os.path.exists(mskFile):
-        print 'WARNING - msk not found for patient', patientID
+        print('WARNING - msk not found for patient', patientID)
         continue
       try:
         msk = np.load(mskFile)
@@ -57,5 +57,5 @@ def load_test_data(inputFolder, mask=False):
 
     testDataClc.append([patientID, img, msk])
 
-  #print 'Loaded', len(testDataClc), 'patients for testing'
+  #print('Loaded', len(testDataClc), 'patients for testing')
   return testDataClc
