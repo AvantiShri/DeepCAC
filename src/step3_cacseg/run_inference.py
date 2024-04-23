@@ -26,8 +26,8 @@ from skimage.transform import resize
 from scipy.ndimage import rotate, measurements
 
 from tensorflow.python.keras import backend as K
-#from tensorflow.python.keras.optimizers import Adam
-from keras.optimizers import adam_v2
+from tensorflow.python.keras.optimizers import Adam
+#from keras.optimizers import adam_v2
 from tensorflow.python.keras.utils import plot_model
 from tensorflow.python.keras.models import Model, load_model
 from tensorflow.python.keras.callbacks import ModelCheckpoint
@@ -171,8 +171,8 @@ def run_inference(data_dir, model_weights_dir_path, weights_file_name,
   cube_size = [64, 64, 32]
   input_shape = (cube_size[2], cube_size[1], cube_size[0], 1)
 
-  #optimizer = 'ADAM'
-  optimizer = adam_v2.Adam(learning_rate=lr, decay=lr/epochs)
+  optimizer = 'ADAM'
+  #optimizer = adam_v2.Adam(learning_rate=lr, decay=lr/epochs)
   extended = True
   drop_out = 0.5
   mgpu = 4
