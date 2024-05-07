@@ -43,7 +43,7 @@ def run_core(patient):
     print('Exception thrown when reading patient_NPY_Pred_112_file', patient[4], e)
     return
 
-  msk_NPY_Pred_112 = patient_NPY_Pred_112[3]
+  msk_NPY_Pred_112 = patient_NPY_Pred_112[2]
 
   # Remove all but the biggest segmented volume
   msk_NPY_Pred_112[msk_NPY_Pred_112 > 0.9] = 1
