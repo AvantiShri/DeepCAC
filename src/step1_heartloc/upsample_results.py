@@ -66,17 +66,25 @@ def run_core(patient):
   upSize = img_SITK_True_RAW.GetSize()
   upSpacing = img_SITK_True_RAW.GetSpacing()
 
-  resFilter = sitk.ResampleImageFilter()
-  msk_SITK_Pred_512 = resFilter.Execute(patient_SITK_Pred_112,
-                                        upSize,
-                                        sitk.Transform(),
-                                        sitk.sitkNearestNeighbor,
-                                        img_SITK_True_RAW.GetOrigin(),
-                                        upSpacing,
-                                        img_SITK_True_RAW.GetDirection(),
-                                        0,
-                                        img_SITK_True_RAW.GetPixelIDValue())
+  #from stackoverflow https://stackoverflow.com/questions/72072305/migrating-simpleitk-1-x-to-2-x
+  #suggested conversion from:
+  # img_sitk = res_filter.Execute(img_sitk, curated_size, sitk.Transform(), method, img_sitk.GetOrigin(), curated_spacing, img_sitk.GetDirection(), 0, img_sitk.GetPixelIDValue()) 
+  #to:
+  # img_sitk = sitk.Resample(img_sitk, curated_size, sitk.Transform(), method, img_sitk.GetOrigin(), curated_spacing, img_sitk.GetDirection(), 0, img_sitk.GetPixelIDValue()) 
+  
+  #resFilter = sitk.ResampleImageFilter()
+  #msk_SITK_Pred_512 = resFilter.Execute(patient_SITK_Pred_112,
+  #                                      upSize,
+  #                                      sitk.Transform(),
+  #                                      sitk.sitkNearestNeighbor,
+  #                                      img_SITK_True_RAW.GetOrigin(),
+  #                                      upSpacing,
+  #                                      img_SITK_True_RAW.GetDirection(),
+  #                                      0,
+  #                                      img_SITK_True_RAW.GetPixelIDValue())
 
+  msk_SITK_Pred_512 = sitk.Resample(patient_SITK_Pred_112, upSize, sitk.Transform(), sitk.sitkNearestNeighbor, img_SITK_True_RAW.GetOrigin(), upSpacing, img_SITK_True_RAW.GetDirection(), 0, img_SITK_True_RAW.GetPixelIDValue())   
+  
   msk_NPY_Pred_512 = sitk.GetArrayFromImage(msk_SITK_Pred_512)
   if np.sum(msk_NPY_Pred_512) == 0:
     print('WARNING: Found emtpy mask for patient', patientID)
