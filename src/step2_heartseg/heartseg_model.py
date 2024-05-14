@@ -43,7 +43,7 @@ def dice_coef_loss(y_true, y_pred):
 ## ----------------------------------------
 
 def getUnet3d(down_steps, input_shape, pool_size=(2, 2, 2), conv_size=(3, 3, 3), initial_learning_rate=0.00001,
-              mgpu=0, ext=False, drop_out=0.5):
+              mgpu=1, ext=False, drop_out=0.5):
   if down_steps == 4:
     if not ext:
       return getUnet3d_4(input_shape, pool_size, conv_size, initial_learning_rate, mgpu)
