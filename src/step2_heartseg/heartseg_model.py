@@ -178,13 +178,13 @@ def getUnet3d_4_ext(input_shape, pool_size, conv_size, initial_learning_rate, mg
   conv10 = Conv3D(1, (1, 1, 1), name='conv_10')(conv9)
   act = Activation('sigmoid', name='act')(conv10)
 
-  if mgpu == 1:
+  if mgpu > 1:
     print('Compiling single GPU model')
     model = Model(inputs=inputs, outputs=act)
     model.compile(optimizer=Adam(lr=initial_learning_rate), loss=dice_coef_loss,
                   metrics=[dice_coef])
     return model
-  elif mgpu > 1:
+  elif mgpu == 1:
     print('Compiling multi GPU model')
     model = Model(inputs=inputs, outputs=act)
     parallel_model = multi_gpu_model(model, gpus=mgpu)
