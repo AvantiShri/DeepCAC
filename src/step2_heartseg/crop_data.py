@@ -161,12 +161,12 @@ def downsampleSitk(imagesRawSitk, final_spacing, final_size):
       method = sitk.sitkLinear
     else:
       method = sitk.sitkNearestNeighbor
-    imagesRawSitk[key] = resFilter.Execute(imagesRawSitk[key],
+    imagesRawSitk[key] = sitk.Resample(imagesRawSitk[key],
                                            final_size,
                                            sitk.Transform(),
                                            method,
                                            imagesRawSitk[key].GetOrigin(),
-                                           final_spacing[0:1],
+                                           final_spacing,
                                            imagesRawSitk[key].GetDirection(),
                                            0,
                                            imagesRawSitk[key].GetPixelIDValue())
