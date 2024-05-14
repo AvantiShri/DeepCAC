@@ -62,7 +62,7 @@ def run_inference(model_weights_dir_path, data_dir, output_dir,
 
   print("\nDeep Learning model inference using 4xGPUs:") 
   
-  mgpu = 4
+  mgpu = 1
 
   output_dir_npy = os.path.join(output_dir, 'npy')
   output_dir_png = os.path.join(output_dir, 'png')
