@@ -152,7 +152,7 @@ def downsampleSitk(imagesRawSitk, final_spacing, final_size):
   final_spacing[0] = origSize[0]*origSpacing[0]/final_size[0]
   final_spacing[1] = origSize[1]*origSpacing[1]/final_size[1]
   
-  img_sitk = sitk.Resample(img_sitk, curated_size, sitk.Transform(), method, img_sitk.GetOrigin(), curated_spacing, img_sitk.GetDirection(), 0, img_sitk.GetPixelIDValue())
+  img_sitk = sitk.Resample(imagesRawSitk, curated_size, sitk.Transform(), method, img_sitk.GetOrigin(), curated_spacing, img_sitk.GetDirection(), 0, img_sitk.GetPixelIDValue())
   resFilter = sitk.ResampleImageFilter()
   #img_sitk = sitk.Resample(img_sitk, curated_size, sitk.Transform(), method, img_sitk.GetOrigin(), curated_spacing, img_sitk.GetDirection(), 0, img_sitk.GetPixelIDValue())
 
