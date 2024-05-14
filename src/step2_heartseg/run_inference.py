@@ -66,10 +66,10 @@ def run_inference(model_weights_dir_path, data_dir, output_dir,
 
   output_dir_npy = os.path.join(output_dir, 'npy')
   output_dir_png = os.path.join(output_dir, 'png')
-  if not os.path.exists(output_dir_npy):
-    os.mkdir(output_dir_npy)
-  if export_png and not os.path.exists(output_dir_png):
-    os.mkdir(output_dir_png)
+  #if not os.path.exists(output_dir_npy):
+   # os.mkdir(output_dir_npy)
+  #if export_png and not os.path.exists(output_dir_png):
+   # os.mkdir(output_dir_png)
 
   inputShape = (training_size[2], training_size[1], training_size[0], 1)
   model = heartseg_model.getUnet3d(down_steps=down_steps, input_shape=inputShape, mgpu=mgpu, ext=True)
