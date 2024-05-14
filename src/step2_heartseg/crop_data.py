@@ -162,11 +162,11 @@ def downsampleSitk(imagesRawSitk, final_spacing, final_size):
     else:
       method = sitk.sitkNearestNeighbor
     imagesRawSitk[key] = resFilter.Execute(imagesRawSitk[key],
-                                           curated_size,
+                                           final_size,
                                            sitk.Transform(),
                                            method,
                                            imagesRawSitk[key].GetOrigin(),
-                                           curated_spacing,
+                                           final_spacing[0:1],
                                            imagesRawSitk[key].GetDirection(),
                                            0,
                                            imagesRawSitk[key].GetPixelIDValue())
